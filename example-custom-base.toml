@@ -1,0 +1,25 @@
+name = "example-custom-base"
+description = "A base system with customizations"
+version = "0.0.3"
+
+[[packages]]
+name = "ansible-core"
+version = "*"
+
+[[packages]]
+name = "git"
+version = "*"
+
+[[packages]]
+name = "vim-enhanced"
+version = "*"
+
+[customizations]
+hostname = "custombase"
+
+[[customizations.group]]
+name = "widget"
+
+[[customizations.group]]
+name = "students"
+

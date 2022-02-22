@@ -1,0 +1,7 @@
+---
+- name: Downloader for AAP installers
+  hosts: localhost
+  vars_files:
+    - vars.yml
+  roles:
+    - { role: lucas_benedito.installer_downloader }

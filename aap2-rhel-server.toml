@@ -1,0 +1,25 @@
+name = "aap2-rhel-server"
+description = "A base system for AAP2 services"
+version = "0.0.2"
+
+[customizations]
+hostname = "aap2-server"
+
+[customizations.timezone]
+timezone = "America/Chicago"
+
+[[customizations.sshkey]]
+user = "root"
+key = "/home/justin/.ssh/id_rsa"
+
+[[packages]]
+name = "ansible-core"
+version = "*"
+
+[[packages]]
+name = "git"
+version = "*"
+
+[[packages]]
+name = "vim-enhanced"
+version = "*"
