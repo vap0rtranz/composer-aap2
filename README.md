@@ -1,4 +1,4 @@
-# Zero Touch Lab
+# AAP Zero Touch Lab
 The goal of this runbook is to showcase the steps for building a Zero Touch lab environment that is entitled to the correct RH repos.  Or *near* zero :)  
 
 Success criteria is to replace Packer/Terraform that has traditionally been used for lab buildouts, re-use the *same* process for Cloud & on-prem, and to assist in standing up AAP2 buildouts.
@@ -32,6 +32,12 @@ The builder box will be used to "bootstrap" the custom OS to target #2 & #3, the
 1. RHEL VM 
 2. HPE DL380
 3. Azure Cloud
+
+## Packer ?
+
+If you want to keep using Packer, skip the entire Composer sections.  
+
+Goto: "Setup Centralized Automation"
 
 
 # Build Custom OS Base
@@ -348,7 +354,13 @@ That ^ downloads the installers to ./data
 
 #### Setup AAP2 Controller
 
+WIP - the Controller setup can be automated.  See example:
+
 https://gitlab.com/redhat-cop/ansible-ssa/role-controller-setup
+
+or
+
+https://github.com/redhat-cop/tower_utilities/
 
 ### Setup AAP2 Option B - Manual
 
