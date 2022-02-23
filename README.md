@@ -298,13 +298,13 @@ That ^ should pass.
 
 
 # Setup Centralized Automation
-Centralized automation will be done by the new Ansible Tower 4, aka. Ansible Automation Platform v2.
+Centralized automation will be done by the new Controller v4, aka. Ansible Automation Platform v2.
 
 ## Build RHEL Server Image Baked w/ AAP Setup
 
 Pre-req: _Setup OS Builder Box_ from above
 
-### Overlay the AAP2 Repo to Composer
+## Overlay the AAP2 Repo to Composer
 
 ```bash
 mkdir -p /etc/osbuild-composer/repositories
@@ -314,14 +314,23 @@ yum config-manager --set-enable ansible-automation-platform-2.1-for-rhel-8-x86_6
 systemctl restart osbuild-worker@.service.d osbuild-worker@1.service osbuild-composer.service
 ```
 
-### Setup AAP2 Option A - Automated 
+... WIP ...
 
-#### Pull the AAP2 Installer
+## Setup AAP2 Option A - Automated 
 
-I based this process on Lucas Benedito's role: https://www.redhat.com/en/blog/automating-installation-ansible-automation-platform-ansible-and-satellite
+Basic process flow:
 
 1. Start the custom built OS.
 2. SSH into the custom built OS.
+3. Run downloader playbook.
+4. Run controller setup playbook.
+
+### Pull the AAP2 Installer
+
+The AAP2 Installer can be automatically downloaded.
+
+I based this process on Lucas Benedito's role: https://www.redhat.com/en/blog/automating-installation-ansible-automation-platform-ansible-and-satellite
+Process:
 
 Setup the AAP Downloader Role:
 `ansible-galaxy install lucas_benedito.installer_downloader`
@@ -352,7 +361,7 @@ Pull the AAP Installer
 
 That ^ downloads the installers to ./data
 
-#### Setup AAP2 Controller
+### Setup AAP2 Controller
 
 WIP - the Controller setup can be automated.  See example:
 
